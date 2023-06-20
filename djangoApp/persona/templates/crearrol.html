@@ -1,0 +1,12 @@
+{% extends 'layouts.html' %}
+{% block content %}
+
+<h1>REGISTRAR ROL</h1>
+
+<form method="POST" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" class="btn btn-success">
+</form>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+  </link>
+  <link href="{% static  'fontawesome/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  </link>
+
+</head>
+
+<body>
+  <h1>CENTRO DE ODONTOLOGÍA DE LA UNIVERSIDAD DE LA SIERRA SUR</h1>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CEODON</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'crearrol' %}">| Registrar Rol</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'crear' %}">| Registrar Persona</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'crearestudiante' %}">| Registrar Estudiante</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'indexrol' %}">| Listar Rol</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}">| Listar Persona</a>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'indexestudiante' %}">| Listar Estudiante</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+  <div clas="content">
+    {% block content %}
+
+    {% endblock %}
+  </div>
+
+  {% block javascript %}
+  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  {% endblock %}
+</body>
+
+</html>
